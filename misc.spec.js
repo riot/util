@@ -1,6 +1,6 @@
 import { evaluateAttributeExpressions, panic } from './misc'
+import {ATTRIBUTE} from './expression-types'
 import { expect } from 'chai'
-import {expressionTypes} from '@riotjs/dom-bindings'
 
 describe('Misc', function() {
   it('panic', () => {
@@ -11,7 +11,7 @@ describe('Misc', function() {
     expect(evaluateAttributeExpressions([
       {
         name: 'class',
-        type: expressionTypes.ATTRIBUTE,
+        type: ATTRIBUTE,
         value: 'hello'
       }
     ])).to.be.deep.equal({

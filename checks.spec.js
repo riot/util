@@ -1,4 +1,4 @@
-import { isBoolean, isFunction, isNil, isNode, isObject } from './checks'
+import { isBoolean, isFunction, isNil, isNode, isObject, isSvg, isTemplate } from './checks'
 import { expect } from 'chai'
 
 describe('Checks', function() {
@@ -34,5 +34,18 @@ describe('Checks', function() {
     expect(isObject(Array)).to.be.not.ok
     expect(isObject(() => {})).to.be.not.ok
     expect(isObject(undefined)).to.be.not.ok
+  })
+
+  it('isSvg', () => {
+    const div = document.createElement('div')
+    div.innerHTML = '<svg><g></g></svg><div></div>'
+    expect(isSvg(div.querySelector('svg'))).to.be.ok
+    expect(isSvg(div)).to.be.not.ok
+    expect(isSvg(div.querySelector('g'))).to.be.ok
+  })
+
+  it('isTemplate', () => {
+    expect(isTemplate(document.createElement('template'))).to.be.ok
+    expect(isTemplate(document.createElement('div'))).to.be.not.ok
   })
 })

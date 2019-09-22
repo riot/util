@@ -9,6 +9,26 @@ export function checkType(element, type) {
 }
 
 /**
+ * Check if an element is part of an svg
+ * @param   {HTMLElement}  el - element to check
+ * @returns {boolean} true if we are in an svg context
+ */
+export function isSvg(el) {
+  const owner = el.ownerSVGElement
+
+  return !!owner || owner === null
+}
+
+/**
+ * Check if an element is a template tag
+ * @param   {HTMLElement}  el - element to check
+ * @returns {boolean} true if it's a <template>
+ */
+export function isTemplate(el) {
+  return !isNil(el.content)
+}
+
+/**
  * Check that will be passed if its argument is a function
  * @param   {*} value - value to check
  * @returns {boolean} - true if the value is a function

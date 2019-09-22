@@ -2,24 +2,27 @@
   "name": "@riotjs/util",
   "version": "0.0.0",
   "description": "Riot.js util functions",
-  "main": "@riotjs/util.js",
-  "jsnext:main": "index.next.js",
-  "module": "index.next.js",
   "scripts": {
     "prepublishOnly": "npm test",
     "lint": "eslint *.js",
     "test": "npm run lint && mocha -r jsdom-global/register -r esm *.spec.js"
   },
   "files": [
-    "index.next.js"
+    "dom.js",
+    "functions.js",
+    "strings.js",
+    "objects.js",
+    "checks.js",
+    "misc.js"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GianlucaGuarini/@riotjs/util.git"
   },
   "keywords": [
-    "es6",
-    "es2015"
+    "Riot.js",
+    "shared",
+    "Riot util"
   ],
   "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (http://gianlucaguarini.com)",
   "license": "MIT",

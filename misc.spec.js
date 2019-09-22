@@ -1,4 +1,4 @@
-import { createAttributeBindings, evaluateAttributeExpressions, panic } from './misc'
+import { evaluateAttributeExpressions, panic } from './misc'
 import { expect } from 'chai'
 import {expressionTypes} from '@riotjs/dom-bindings'
 
@@ -8,18 +8,13 @@ describe('Misc', function() {
   })
 
   it('evaluateAttributeExpressions', () => {
-    const div = document.createElement('div')
-    const bindings = createAttributeBindings(div, [{
-      name: 'class',
-      type: expressionTypes.ATTRIBUTE,
-      evaluate: scope => scope.class
-    }])
-
-    bindings.mount({
-      class: 'hello'
-    })
-
-    expect(evaluateAttributeExpressions(bindings.expressions)).to.be.deep.equal({
+    expect(evaluateAttributeExpressions([
+      {
+        name: 'class',
+        type: expressionTypes.ATTRIBUTE,
+        value: 'hello'
+      }
+    ])).to.be.deep.equal({
       class: 'hello'
     })
   })

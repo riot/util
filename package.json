@@ -13,6 +13,8 @@
     "strings.js",
     "objects.js",
     "checks.js",
+    "expression-types.js",
+    "binding-types.js",
     "misc.js"
   ],
   "repository": {
@@ -31,7 +33,6 @@
   },
   "homepage": "https://github.com/GianlucaGuarini/@riotjs/util#readme",
   "devDependencies": {
-    "@riotjs/dom-bindings": "^4.3.0",
     "chai": "^4.2.0",
     "eslint": "^6.4.0",
     "eslint-config-riot": "^3.0.0",

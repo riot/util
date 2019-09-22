@@ -1,4 +1,4 @@
-import {createExpression, expressionTypes} from '@riotjs/dom-bindings'
+import {ATTRIBUTE, VALUE} from './expression-types'
 import {dashToCamelCase} from './strings'
 
 /**
@@ -8,30 +8,6 @@ import {dashToCamelCase} from './strings'
  */
 export function panic(message) {
   throw new Error(message)
-}
-
-/**
- * Create the bindings to update the component attributes
- * @param   {HTMLElement} node - node where we will bind the expressions
- * @param   {Array} attributes - list of attribute bindings
- * @returns {TemplateChunk} - template bindings object
- */
-export function createAttributeBindings(node, attributes = []) {
-  const expressions = attributes.map(a => createExpression(node, a))
-  const binding = {}
-
-  const updateValues = method => scope => {
-    expressions.forEach(e => e[method](scope))
-
-    return binding
-  }
-
-  return Object.assign(binding, {
-    expressions,
-    mount: updateValues('mount'),
-    update: updateValues('update'),
-    unmount: updateValues('unmount')
-  })
 }
 
 /**
@@ -45,13 +21,13 @@ export function evaluateAttributeExpressions(attributes) {
 
     switch (true) {
     // spread attribute
-    case !attribute.name && type === expressionTypes.ATTRIBUTE:
+    case !attribute.name && type === ATTRIBUTE:
       return {
         ...acc,
         ...value
       }
     // value attribute
-    case type === expressionTypes.VALUE:
+    case type === VALUE:
       acc.value = attribute.value
       break
     // normal attributes

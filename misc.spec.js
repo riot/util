@@ -1,4 +1,4 @@
-import { evaluateAttributeExpressions, panic } from './misc'
+import { evaluateAttributeExpressions, memoize, panic } from './misc'
 import {ATTRIBUTE} from './expression-types'
 import { expect } from 'chai'
 
@@ -19,7 +19,17 @@ describe('Misc', function() {
     })
   })
 
-  it('evaluateProps', () => {
+  it('memoize', () => {
+    let count = 0 // eslint-disable-line
+    const increment = memoize(function() {
+      count ++
 
+      return count
+    })
+
+    increment(1)
+    increment(1)
+
+    expect(count).to.be.equal(1)
   })
 })

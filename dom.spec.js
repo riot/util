@@ -1,4 +1,4 @@
-import { DOMattributesToObject, cleanNode, clearChildren, moveChildren } from './dom'
+import { DOMattributesToObject, cleanNode, clearChildren, moveChildren, removeNode } from './dom'
 import { expect } from 'chai'
 
 describe('DOM', function() {
@@ -34,6 +34,16 @@ describe('DOM', function() {
     source.innerHTML = '<p>hello</p><p>goodbye</p>'
 
     clearChildren(source.children)
+
+    expect(source.innerHTML).to.be.equal('')
+  })
+
+  it('removeNode', () => {
+    const source = document.createElement('div')
+    source.innerHTML = '<p>hello</p>'
+    const p = source.querySelector('p')
+
+    removeNode(p)
 
     expect(source.innerHTML).to.be.equal('')
   })

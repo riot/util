@@ -9,6 +9,20 @@ import {dashToCamelCase} from './strings'
 export function panic(message) {
   throw new Error(message)
 }
+/**
+ * Returns the memoized (cached) function.
+ * // borrowed from https://www.30secondsofcode.org/js/s/memoize
+ * @param {Function} fn - function to memoize
+ * @returns {Function} memoize function
+ */
+export function memoize(fn) {
+  const cache = new Map()
+  const cached = val => {
+    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val)
+  }
+  cached.cache = cache
+  return cached
+}
 
 /**
  * Evaluate a list of attribute expressions

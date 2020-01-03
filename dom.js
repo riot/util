@@ -42,5 +42,19 @@ export function cleanNode(node) {
  * @returns {undefined}
  */
 export function clearChildren(children) {
-  Array.from(children).forEach(n => n.parentNode && n.parentNode.removeChild(n))
+  Array.from(children).forEach(removeNode)
+}
+
+/**
+ * Remove a node from the DOM
+ * @param   {HTMLElement} node - target node
+ * @returns {undefined}
+ */
+export function removeNode(node) {
+  const {parentNode} = node
+  if (node.remove)
+    node.remove()
+  /* istanbul ignore else */
+  else if (parentNode)
+    parentNode.removeChild(node)
 }

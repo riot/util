@@ -10,6 +10,7 @@
   "files": [
     "dom.js",
     "functions.js",
+    "constants.js",
     "strings.js",
     "objects.js",
     "checks.js",

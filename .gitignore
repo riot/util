@@ -38,3 +38,6 @@ jspm_packages
 
 # mac useless file
 .DS_Store
+
+# Editor config
+.idea

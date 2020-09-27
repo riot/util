@@ -35,11 +35,11 @@
   "homepage": "https://github.com/GianlucaGuarini/@riotjs/util#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.10.0",
     "eslint-config-riot": "^3.0.0",
     "esm": "^3.2.25",
-    "jsdom": "16.2.2",
+    "jsdom": "16.4.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^7.1.1"
+    "mocha": "^8.1.3"
   }
 }

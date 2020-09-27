@@ -42,19 +42,29 @@ export function cleanNode(node) {
  * @returns {undefined}
  */
 export function clearChildren(children) {
-  Array.from(children).forEach(removeNode)
+  Array.from(children).forEach(removeChild)
 }
 
+
 /**
- * Remove a node from the DOM
- * @param   {HTMLElement} node - target node
+ * Remove a node
+ * @param {HTMLElement}node - node to remove
  * @returns {undefined}
  */
-export function removeNode(node) {
-  const {parentNode} = node
-  if (node.remove)
-    node.remove()
-  /* istanbul ignore else */
-  else if (parentNode)
-    parentNode.removeChild(node)
-}
+export const removeChild = node => node && node.parentNode && node.parentNode.removeChild(node)
+
+/**
+ * Insert before a node
+ * @param {HTMLElement} newNode - node to insert
+ * @param {HTMLElement} refNode - ref child
+ * @returns {undefined}
+ */
+export const insertBefore = (newNode, refNode) => refNode && refNode.parentNode && refNode.parentNode.insertBefore(newNode, refNode)
+
+/**
+ * Replace a node
+ * @param {HTMLElement} newNode - new node to add to the DOM
+ * @param {HTMLElement} replaced - node to replace
+ * @returns {undefined}
+ */
+export const replaceChild = (newNode, replaced) => replaced && replaced.parentNode && replaced.parentNode.replaceChild(newNode, replaced)

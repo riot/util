@@ -52,7 +52,7 @@ export function isBoolean(value) {
  * @returns {boolean} true only for the value is an object
  */
 export function isObject(value) {
-  return !isNil(value) && checkType(value, 'object')
+  return !isNil(value) && value.constructor === Object
 }
 
 /**

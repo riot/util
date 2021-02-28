@@ -20,7 +20,8 @@ export const
   STATE_KEY = 'state',
   SLOTS_KEY = 'slots',
   ROOT_KEY = 'root',
-  IS_PURE_SYMBOL = Symbol.for('pure'),
+  IS_PURE_SYMBOL = Symbol('pure'),
+  IS_COMPONENT_UPDATING = Symbol('is_updating'),
   PARENT_KEY_SYMBOL = Symbol('parent'),
   ATTRIBUTES_KEY_SYMBOL = Symbol('attributes'),
   TEMPLATE_KEY_SYMBOL = Symbol('template')

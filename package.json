@@ -1,6 +1,6 @@
 {
   "name": "@riotjs/util",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Riot.js util functions",
   "scripts": {
     "prepublishOnly": "npm test",

@@ -25,7 +25,7 @@ export function isSvg(el) {
  * @returns {boolean} true if it's a <template>
  */
 export function isTemplate(el) {
-  return !isNil(el.content)
+  return el.tagName === 'TEMPLATE'
 }
 
 /**

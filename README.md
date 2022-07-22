@@ -2,14 +2,14 @@
 
 Riot.js shared util scripts
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status][ci-image]][ci-url]
 [![Issue Count][codeclimate-image]][codeclimate-url]
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
 
-[travis-image]:  https://img.shields.io/travis/riot/util.svg?style=flat-square
-[travis-url]:    https://travis-ci.org/riot/util
+[ci-image]:https://img.shields.io/github/workflow/status/riot/util/test?style=flat-square
+[ci-url]:https://github.com/riot/util/actions
 [license-image]: https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:   LICENSE
 [npm-version-image]:   https://img.shields.io/npm/v/@riotjs/util.svg?style=flat-square

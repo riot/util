@@ -2,6 +2,8 @@
   "name": "@riotjs/util",
   "version": "2.0.4",
   "description": "Riot.js util functions",
+  "main": "index.js",
+  "module": "index.js",
   "scripts": {
     "prepublishOnly": "npm test",
     "lint": "eslint *.js",

@@ -21,10 +21,7 @@ export function DOMattributesToObject(element) {
 
 // Ignore this helper because it's needed only for svg tags
 export function moveChildren(source, target) {
-  if (source.firstChild) {
-    target.appendChild(source.firstChild)
-    moveChildren(source, target)
-  }
+  target.replaceChildren(...source.childNodes)
 }
 
 /**
@@ -33,7 +30,8 @@ export function moveChildren(source, target) {
  * @returns {undefined}
  */
 export function cleanNode(node) {
-  clearChildren(node.childNodes)
+  // eslint-disable-next-line fp/no-loops
+  while (node.firstChild) node.removeChild(node.firstChild)
 }
 
 /**
@@ -42,7 +40,8 @@ export function cleanNode(node) {
  * @returns {undefined}
  */
 export function clearChildren(children) {
-  Array.from(children).forEach(removeChild)
+  // eslint-disable-next-line fp/no-loops,fp/no-let
+  for (let i = 0;i < children.length; i++) removeChild(children[i])
 }
 
 

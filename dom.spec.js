@@ -41,7 +41,7 @@ describe('DOM', function() {
     const source = document.createElement('div')
     source.innerHTML = '<p>hello</p><p>goodbye</p>'
 
-    clearChildren(source.children)
+    clearChildren(Array.from(source.children))
 
     expect(source.innerHTML).to.be.equal('')
   })

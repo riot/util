@@ -1,4 +1,4 @@
-import {dashToCamelCase} from './strings'
+import {dashToCamelCase} from './strings.js'
 
 /**
  * Get all the element attributes as object

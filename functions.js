@@ -1,4 +1,4 @@
-import {isFunction} from './checks'
+import {isFunction} from './checks.js'
 
 // does simply nothing
 export function noop() {

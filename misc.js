@@ -1,5 +1,5 @@
-import {ATTRIBUTE, VALUE} from './expression-types'
-import {dashToCamelCase} from './strings'
+import {ATTRIBUTE, VALUE} from './expression-types.js'
+import {dashToCamelCase} from './strings.js'
 
 /**
  * Throw an error with a descriptive message

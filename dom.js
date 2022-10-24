@@ -21,7 +21,8 @@ export function DOMattributesToObject(element) {
 
 // Ignore this helper because it's needed only for svg tags
 export function moveChildren(source, target) {
-  target.replaceChildren(...source.childNodes)
+  // eslint-disable-next-line fp/no-loops
+  while (source.firstChild) target.appendChild(source.firstChild)
 }
 
 /**
@@ -50,7 +51,7 @@ export function clearChildren(children) {
  * @param {HTMLElement}node - node to remove
  * @returns {undefined}
  */
-export const removeChild = node => node && node.parentNode && node.parentNode.removeChild(node)
+export const removeChild = node => node.remove()
 
 /**
  * Insert before a node

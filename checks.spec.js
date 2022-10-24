@@ -1,4 +1,4 @@
-import { isBoolean, isFunction, isNil, isNode, isObject, isSvg, isTemplate } from './checks'
+import { isBoolean, isFunction, isNil, isNode, isObject, isSvg, isTemplate } from './checks.js'
 import { expect } from 'chai'
 
 describe('Checks', function() {

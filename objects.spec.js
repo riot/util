@@ -1,4 +1,4 @@
-import { cloneDeep, defineDefaults, defineProperties, defineProperty } from './objects'
+import { cloneDeep, defineDefaults, defineProperties, defineProperty } from './objects.js'
 import { expect } from 'chai'
 
 describe('Objects', function() {

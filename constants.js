@@ -1,4 +1,4 @@
-// Riot.js constants that can be used accross more modules
+// Riot.js constants that can be used across more modules
 
 export const
   COMPONENTS_IMPLEMENTATION_MAP = new Map(),

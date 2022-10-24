@@ -65,7 +65,7 @@ export function isNil(value) {
 }
 
 /**
- * Detect node js environements
+ * Detect node js environment
  * @returns {boolean} true if the runtime is node
  */
 export function isNode() {

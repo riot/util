@@ -6,7 +6,7 @@ import {
   moveChildren,
   removeChild,
   replaceChild
-} from './dom'
+} from './dom.js'
 import {expect} from 'chai'
 
 describe('DOM', function() {

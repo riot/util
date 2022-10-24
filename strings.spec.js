@@ -1,4 +1,4 @@
-import { camelToDashCase, dashToCamelCase } from './strings'
+import { camelToDashCase, dashToCamelCase } from './strings.js'
 import { expect } from 'chai'
 
 describe('Strings', function() {

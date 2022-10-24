@@ -4,7 +4,7 @@
  * @param   {Object} source - object where the new property will be set
  * @param   {string} key - object key where the new property will be stored
  * @param   {*} value - value of the new property
- * @param   {Object} options - set the propery overriding the default options
+ * @param   {Object} options - set the property overriding the default options
  * @returns {Object} - the original object modified
  */
 export function defineProperty(source, key, value, options = {}) {
@@ -25,7 +25,7 @@ export function defineProperty(source, key, value, options = {}) {
  * Define multiple properties on a target object
  * @param   {Object} source - object where the new properties will be set
  * @param   {Object} properties - object containing as key pair the key + value properties
- * @param   {Object} options - set the propery overriding the default options
+ * @param   {Object} options - set the property overriding the default options
  * @returns {Object} the original object modified
  */
 export function defineProperties(source, properties, options) {
@@ -52,7 +52,7 @@ export function defineDefaults(source, defaults) {
 
 /**
  * Simple clone deep function, do not use it for classes or recursive objects!
- * @param   {*} source - possibily an object to clone
+ * @param   {*} source - possibly an object to clone
  * @returns {*} the object we wanted to clone
  */
 export function cloneDeep(source) {

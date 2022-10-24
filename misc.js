@@ -4,10 +4,11 @@ import {dashToCamelCase} from './strings.js'
 /**
  * Throw an error with a descriptive message
  * @param   { string } message - error message
- * @returns { undefined } hoppla.. at this point the program should stop working
+ * @param   { string } cause - optional error cause object
+ * @returns { undefined } hoppla... at this point the program should stop working
  */
-export function panic(message) {
-  throw new Error(message)
+export function panic(message, cause) {
+  throw new Error(message, { cause })
 }
 /**
  * Returns the memoized (cached) function.

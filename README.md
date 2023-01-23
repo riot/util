@@ -8,7 +8,7 @@ Riot.js shared util scripts
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
 
-[ci-image]:https://img.shields.io/github/workflow/status/riot/util/test?style=flat-square
+[ci-image]:https://img.shields.io/github/actions/workflow/status/riot/util/test.yml?style=flat-square
 [ci-url]:https://github.com/riot/util/actions
 [license-image]: https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:   LICENSE

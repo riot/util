@@ -1,4 +1,3 @@
-
 /**
  * Helper function to set an immutable property
  * @param   {Object} source - object where the new property will be set
@@ -14,7 +13,7 @@ export function defineProperty(source, key, value, options = {}) {
     enumerable: false,
     writable: false,
     configurable: true,
-    ...options
+    ...options,
   })
   /* eslint-enable fp/no-mutating-methods */
 

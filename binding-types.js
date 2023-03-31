@@ -9,5 +9,5 @@ export default {
   IF,
   SIMPLE,
   TAG,
-  SLOT
+  SLOT,
 }

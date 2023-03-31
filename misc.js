@@ -1,5 +1,5 @@
-import {ATTRIBUTE, VALUE} from './expression-types.js'
-import {dashToCamelCase} from './strings.js'
+import { ATTRIBUTE, VALUE } from './expression-types.js'
+import { dashToCamelCase } from './strings.js'
 
 /**
  * Throw an error with a descriptive message
@@ -18,8 +18,10 @@ export function panic(message, cause) {
  */
 export function memoize(fn) {
   const cache = new Map()
-  const cached = val => {
-    return cache.has(val) ? cache.get(val) : cache.set(val, fn.call(this, val)) && cache.get(val)
+  const cached = (val) => {
+    return cache.has(val)
+      ? cache.get(val)
+      : cache.set(val, fn.call(this, val)) && cache.get(val)
   }
   cached.cache = cache
   return cached
@@ -32,22 +34,22 @@ export function memoize(fn) {
  */
 export function evaluateAttributeExpressions(attributes) {
   return attributes.reduce((acc, attribute) => {
-    const {value, type} = attribute
+    const { value, type } = attribute
 
     switch (true) {
-    // spread attribute
-    case !attribute.name && type === ATTRIBUTE:
-      return {
-        ...acc,
-        ...value
-      }
-    // value attribute
-    case type === VALUE:
-      acc.value = attribute.value
-      break
-    // normal attributes
-    default:
-      acc[dashToCamelCase(attribute.name)] = attribute.value
+      // spread attribute
+      case !attribute.name && type === ATTRIBUTE:
+        return {
+          ...acc,
+          ...value,
+        }
+      // value attribute
+      case type === VALUE:
+        acc.value = attribute.value
+        break
+      // normal attributes
+      default:
+        acc[dashToCamelCase(attribute.name)] = attribute.value
     }
 
     return acc

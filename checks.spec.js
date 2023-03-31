@@ -1,7 +1,15 @@
-import { isBoolean, isFunction, isNil, isNode, isObject, isSvg, isTemplate } from './checks.js'
+import {
+  isBoolean,
+  isFunction,
+  isNil,
+  isNode,
+  isObject,
+  isSvg,
+  isTemplate,
+} from './checks.js'
 import { expect } from 'chai'
 
-describe('Checks', function() {
+describe('Checks', function () {
   it('isFunction', () => {
     expect(isFunction(() => {})).to.be.ok
     expect(isFunction(null)).to.be.not.ok
@@ -33,8 +41,14 @@ describe('Checks', function() {
     expect(isObject(null)).to.be.not.ok
     expect(isObject(Array)).to.be.not.ok
     expect(isObject(() => {})).to.be.not.ok
-    expect(isObject(new (function() { return {} })())).to.be.ok
-    expect(isObject(new (function() {})())).to.be.not.ok
+    expect(
+      isObject(
+        new (function () {
+          return {}
+        })(),
+      ),
+    ).to.be.ok
+    expect(isObject(new (function () {})())).to.be.not.ok
     expect(isObject(undefined)).to.be.not.ok
   })
 

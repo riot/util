@@ -7,5 +7,5 @@ export default {
   ATTRIBUTE,
   EVENT,
   TEXT,
-  VALUE
+  VALUE,
 }

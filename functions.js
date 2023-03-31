@@ -1,4 +1,4 @@
-import {isFunction} from './checks.js'
+import { isFunction } from './checks.js'
 
 // does simply nothing
 export function noop() {
@@ -12,7 +12,7 @@ export function noop() {
  * @returns {Object} the original object received
  */
 export function autobindMethods(source, methods) {
-  methods.forEach(method => {
+  methods.forEach((method) => {
     source[method] = source[method].bind(source)
   })
 
@@ -25,7 +25,9 @@ export function autobindMethods(source, methods) {
  * @returns {*} anything
  */
 export function callOrAssign(source) {
-  return isFunction(source) ? (source.prototype && source.prototype.constructor ?
-    new source() : source()
-  ) : source
+  return isFunction(source)
+    ? source.prototype && source.prototype.constructor
+      ? new source()
+      : source()
+    : source
 }

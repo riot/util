@@ -1,7 +1,7 @@
 import { camelToDashCase, dashToCamelCase } from './strings.js'
 import { expect } from 'chai'
 
-describe('Strings', function() {
+describe('Strings', function () {
   it('camelToDashCase', () => {
     expect(camelToDashCase('HelloWorld')).to.be.equal('hello-world')
     expect(camelToDashCase('helloWorld')).to.be.equal('hello-world')

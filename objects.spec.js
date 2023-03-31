@@ -1,7 +1,12 @@
-import { cloneDeep, defineDefaults, defineProperties, defineProperty } from './objects.js'
+import {
+  cloneDeep,
+  defineDefaults,
+  defineProperties,
+  defineProperty,
+} from './objects.js'
 import { expect } from 'chai'
 
-describe('Objects', function() {
+describe('Objects', function () {
   it('defineProperty', () => {
     const source = {}
     defineProperty(source, 'name', 'hello')
@@ -15,7 +20,7 @@ describe('Objects', function() {
   it('defineProperties', () => {
     const source = {}
     defineProperties(source, {
-      name: 'hello'
+      name: 'hello',
     })
     expect(source.name).to.be.equal('hello')
 
@@ -26,12 +31,12 @@ describe('Objects', function() {
 
   it('defineDefaults', () => {
     const source = {
-      name: 'hello'
+      name: 'hello',
     }
 
     defineDefaults(source, {
       name: 'goodbye',
-      surname: 'hello'
+      surname: 'hello',
     })
 
     expect(source.name).to.be.equal('hello')

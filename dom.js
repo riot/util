@@ -1,4 +1,4 @@
-import {dashToCamelCase} from './strings.js'
+import { dashToCamelCase } from './strings.js'
 
 /**
  * Get all the element attributes as object
@@ -42,16 +42,15 @@ export function cleanNode(node) {
  */
 export function clearChildren(children) {
   // eslint-disable-next-line fp/no-loops,fp/no-let
-  for (let i = 0;i < children.length; i++) removeChild(children[i])
+  for (let i = 0; i < children.length; i++) removeChild(children[i])
 }
-
 
 /**
  * Remove a node
  * @param {HTMLElement}node - node to remove
  * @returns {undefined}
  */
-export const removeChild = node => node.remove()
+export const removeChild = (node) => node.remove()
 
 /**
  * Insert before a node
@@ -59,7 +58,10 @@ export const removeChild = node => node.remove()
  * @param {HTMLElement} refNode - ref child
  * @returns {undefined}
  */
-export const insertBefore = (newNode, refNode) => refNode && refNode.parentNode && refNode.parentNode.insertBefore(newNode, refNode)
+export const insertBefore = (newNode, refNode) =>
+  refNode &&
+  refNode.parentNode &&
+  refNode.parentNode.insertBefore(newNode, refNode)
 
 /**
  * Replace a node
@@ -67,4 +69,7 @@ export const insertBefore = (newNode, refNode) => refNode && refNode.parentNode 
  * @param {HTMLElement} replaced - node to replace
  * @returns {undefined}
  */
-export const replaceChild = (newNode, replaced) => replaced && replaced.parentNode && replaced.parentNode.replaceChild(newNode, replaced)
+export const replaceChild = (newNode, replaced) =>
+  replaced &&
+  replaced.parentNode &&
+  replaced.parentNode.replaceChild(newNode, replaced)

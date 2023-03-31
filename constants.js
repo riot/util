@@ -1,7 +1,6 @@
 // Riot.js constants that can be used across more modules
 
-export const
-  COMPONENTS_IMPLEMENTATION_MAP = new Map(),
+export const COMPONENTS_IMPLEMENTATION_MAP = new Map(),
   DOM_COMPONENT_INSTANCE_PROPERTY = Symbol('riot-component'),
   PLUGINS_SET = new Set(),
   IS_DIRECTIVE = 'is',

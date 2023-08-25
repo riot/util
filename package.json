@@ -2,15 +2,59 @@
   "name": "@riotjs/util",
   "version": "2.2.1",
   "description": "Riot.js util functions",
-  "main": "index.js",
+  "main": "cjs/index.js",
   "module": "index.js",
   "type": "module",
   "scripts": {
-    "prepublishOnly": "npm test",
+    "prepublishOnly": "npm test && npm run build",
     "lint": "npx prettier -c . && eslint *.js",
+    "build": "rm -rf cjs && esbuild $(find . -name '*.js' -not -name '*.spec.js' -maxdepth 1) --bundle --target=esnext --external:./*.js --format=cjs --outdir=cjs",
     "test": "npm run lint && mocha -r jsdom-global/register *.spec.js"
   },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "common": "./cjs/index.js"
+    },
+    "./dom": {
+      "import": "./dom.js",
+      "common": "./cjs/dom.js"
+    },
+    "./functions": {
+      "import": "./functions.js",
+      "common": "./cjs/functions.js"
+    },
+    "./constants": {
+      "import": "./constants.js",
+      "common": "./cjs/constants.js"
+    },
+    "./strings": {
+      "import": "./strings.js",
+      "common": "./cjs/strings.js"
+    },
+    "./objects": {
+      "import": "./objects.js",
+      "common": "./cjs/objects.js"
+    },
+    "./checks": {
+      "import": "./checks.js",
+      "common": "./cjs/checks.js"
+    },
+    "./expression-types": {
+      "import": "./expression-types.js",
+      "common": "./cjs/expression-types.js"
+    },
+    "./binding-types": {
+      "import": "./binding-types.js",
+      "common": "./cjs/binding-types.js"
+    },
+    "./misc": {
+      "import": "./misc.js",
+      "common": "./cjs/misc.js"
+    }
+  },
   "files": [
+    "index.js",
     "dom.js",
     "functions.js",
     "constants.js",
@@ -19,7 +63,8 @@
     "checks.js",
     "expression-types.js",
     "binding-types.js",
-    "misc.js"
+    "misc.js",
+    "cjs"
   ],
   "repository": {
     "type": "git",
@@ -30,20 +75,21 @@
     "shared",
     "Riot util"
   ],
-  "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (http://gianlucaguarini.com)",
+  "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (https://gianlucaguarini.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GianlucaGuarini/@riotjs/util/issues"
   },
   "homepage": "https://github.com/GianlucaGuarini/@riotjs/util#readme",
   "devDependencies": {
-    "@riotjs/prettier-config": "^1.0.1",
-    "chai": "^4.3.7",
-    "eslint": "^8.37.0",
-    "eslint-config-riot": "^4.0.0",
-    "jsdom": "21.1.1",
+    "@riotjs/prettier-config": "^1.1.0",
+    "chai": "^4.3.8",
+    "esbuild": "^0.19.2",
+    "eslint": "^8.48.0",
+    "eslint-config-riot": "^4.1.1",
+    "jsdom": "22.1.0",
     "jsdom-global": "3.0.2",
     "mocha": "^10.2.0",
-    "prettier": "^2.8.7"
+    "prettier": "^3.0.2"
   }
 }

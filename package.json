@@ -2,55 +2,55 @@
   "name": "@riotjs/util",
   "version": "2.2.2",
   "description": "Riot.js util functions",
-  "main": "cjs/index.js",
+  "main": "index.cjs",
   "module": "index.js",
   "type": "module",
   "scripts": {
     "prepublishOnly": "npm test && npm run build",
     "lint": "npx prettier -c . && eslint *.js",
-    "build": "rm -rf cjs && esbuild $(find . -name '*.js' -not -name '*.spec.js' -maxdepth 1) --bundle --target=esnext --external:./*.js --format=cjs --outdir=cjs",
+    "build": "find . -name '*.js' -not -name '*.spec.js' -not -name 'rollup.config.js' -maxdepth 1 | xargs rollup -c rollup.config.js",
     "test": "npm run lint && mocha -r jsdom-global/register *.spec.js"
   },
   "exports": {
     ".": {
       "import": "./index.js",
-      "common": "./cjs/index.js"
+      "require": "./index.cjs"
     },
     "./dom": {
       "import": "./dom.js",
-      "common": "./cjs/dom.js"
+      "require": "./dom.cjs"
     },
     "./functions": {
       "import": "./functions.js",
-      "common": "./cjs/functions.js"
+      "require": "./functions.cjs"
     },
     "./constants": {
       "import": "./constants.js",
-      "common": "./cjs/constants.js"
+      "require": "./constants.cjs"
     },
     "./strings": {
       "import": "./strings.js",
-      "common": "./cjs/strings.js"
+      "require": "./strings.cjs"
     },
     "./objects": {
       "import": "./objects.js",
-      "common": "./cjs/objects.js"
+      "require": "./objects.cjs"
     },
     "./checks": {
       "import": "./checks.js",
-      "common": "./cjs/checks.js"
+      "require": "./checks.cjs"
     },
     "./expression-types": {
       "import": "./expression-types.js",
-      "common": "./cjs/expression-types.js"
+      "require": "./expression-types.cjs"
     },
     "./binding-types": {
       "import": "./binding-types.js",
-      "common": "./cjs/binding-types.js"
+      "require": "./binding-types.cjs"
     },
     "./misc": {
       "import": "./misc.js",
-      "common": "./cjs/misc.js"
+      "require": "./misc.cjs"
     }
   },
   "files": [
@@ -64,7 +64,16 @@
     "expression-types.js",
     "binding-types.js",
     "misc.js",
-    "cjs"
+    "index.cjs",
+    "dom.cjs",
+    "functions.cjs",
+    "constants.cjs",
+    "strings.cjs",
+    "objects.cjs",
+    "checks.cjs",
+    "expression-types.cjs",
+    "binding-types.cjs",
+    "misc.cjs"
   ],
   "repository": {
     "type": "git",
@@ -84,12 +93,12 @@
   "devDependencies": {
     "@riotjs/prettier-config": "^1.1.0",
     "chai": "^4.3.8",
-    "esbuild": "^0.19.2",
     "eslint": "^8.48.0",
     "eslint-config-riot": "^4.1.1",
     "jsdom": "22.1.0",
     "jsdom-global": "3.0.2",
     "mocha": "^10.2.0",
-    "prettier": "^3.0.2"
+    "prettier": "^3.0.2",
+    "rollup": "^3.28.1"
   }
 }

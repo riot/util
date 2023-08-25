@@ -43,4 +43,4 @@ jspm_packages
 .idea
 
 # generated files
-/cjs
+*.cjs

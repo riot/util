@@ -1,6 +1,6 @@
 {
   "name": "@riotjs/util",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Riot.js util functions",
   "main": "index.cjs",
   "module": "index.js",

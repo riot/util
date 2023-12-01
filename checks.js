@@ -69,5 +69,5 @@ export function isNil(value) {
  * @returns {boolean} true if the runtime is node
  */
 export function isNode() {
-  return typeof process !== 'undefined'
+  return typeof globalThis.process !== 'undefined'
 }

@@ -3,6 +3,7 @@ import {
   defineDefaults,
   defineProperties,
   defineProperty,
+  filter,
 } from './objects.js'
 import { expect } from 'chai'
 
@@ -50,5 +51,17 @@ describe('Objects', function () {
 
     expect(clone.surname).to.be.not.ok
     expect(clone.name).to.be.equal('hello')
+  })
+
+  it('filter', () => {
+    const source = { name: 'hello', class: 'test' }
+    const filtered = filter(source, (key) => key === 'name')
+
+    expect(filtered.class).to.be.not.ok
+    expect(filtered.name).to.be.equal('hello')
+  })
+
+  it('filter (null)', () => {
+    expect(() => filter(null, (key) => key === 'name')).to.not.throw()
   })
 })

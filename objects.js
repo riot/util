@@ -1,3 +1,5 @@
+import { isObject } from './checks.js'
+
 /**
  * Helper function to set an immutable property
  * @param   {Object} source - object where the new property will be set
@@ -55,5 +57,19 @@ export function defineDefaults(source, defaults) {
  * @returns {*} the object we wanted to clone
  */
 export function cloneDeep(source) {
-  return JSON.parse(JSON.stringify(source))
+  return structuredClone(source)
+}
+
+/**
+ * Like Array.prototype.filter but for objects
+ * @param {Object} source - target object
+ * @param {Funciton} filter - filter function
+ * @return {Object} filtered source or the original source received
+ */
+export function filter(source, filter) {
+  return isObject(source)
+    ? Object.fromEntries(
+        Object.entries(source).filter(([key, value]) => filter(key, value)),
+      )
+    : source
 }

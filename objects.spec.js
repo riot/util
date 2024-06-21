@@ -4,6 +4,7 @@ import {
   defineProperties,
   defineProperty,
   filter,
+  pick,
 } from './objects.js'
 import { expect } from 'chai'
 
@@ -63,5 +64,17 @@ describe('Objects', function () {
 
   it('filter (null)', () => {
     expect(() => filter(null, (key) => key === 'name')).to.not.throw()
+  })
+
+  it('pick', () => {
+    const source = { name: 'hello', class: 'test' }
+    const filtered = pick(source, ['name'])
+
+    expect(filtered.class).to.be.not.ok
+    expect(filtered.name).to.be.equal('hello')
+  })
+
+  it('pick (null)', () => {
+    expect(() => pick(null, ['name'])).to.not.throw()
   })
 })

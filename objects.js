@@ -73,3 +73,15 @@ export function filter(source, filter) {
       )
     : source
 }
+
+/**
+ * Generate a new object picking only the properties from a given array
+ * @param {Object} source - target object
+ * @param {Array} keys - list of keys that we want to copy over to the new object
+ * @return {Object} a new object conaining only the keys that we have picked from the keys array list
+ */
+export function pick(source, keys) {
+  return isObject(source)
+    ? Object.fromEntries(keys.map((key) => [key, source[key]]))
+    : source
+}

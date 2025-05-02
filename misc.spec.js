@@ -1,4 +1,4 @@
-import { evaluateAttributeExpressions, memoize, panic } from './misc.js'
+import { generatePropsFromAttributes, memoize, panic } from './misc.js'
 import { ATTRIBUTE } from './expression-types.js'
 import { expect } from 'chai'
 
@@ -9,13 +9,16 @@ describe('Misc', function () {
 
   it('evaluateAttributeExpressions', () => {
     expect(
-      evaluateAttributeExpressions([
-        {
-          name: 'class',
-          type: ATTRIBUTE,
-          value: 'hello',
-        },
-      ]),
+      generatePropsFromAttributes(
+        [
+          {
+            name: 'class',
+            type: ATTRIBUTE,
+            evaluate: (scope) => scope.text,
+          },
+        ],
+        { text: 'hello' },
+      ),
     ).to.be.deep.equal({
       class: 'hello',
     })

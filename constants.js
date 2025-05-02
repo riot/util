@@ -22,5 +22,4 @@ export const COMPONENTS_IMPLEMENTATION_MAP = new Map(),
   IS_PURE_SYMBOL = Symbol('pure'),
   IS_COMPONENT_UPDATING = Symbol('is_updating'),
   PARENT_KEY_SYMBOL = Symbol('parent'),
-  ATTRIBUTES_KEY_SYMBOL = Symbol('attributes'),
   TEMPLATE_KEY_SYMBOL = Symbol('template')

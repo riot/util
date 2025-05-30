@@ -94,7 +94,7 @@
     "@riotjs/prettier-config": "^1.1.0",
     "chai": "^5.2.0",
     "eslint": "^8.48.0",
-    "eslint-config-riot": "^4.1.1",
+    "eslint-config-riot": "^4.1.2",
     "jsdom": "26.1.0",
     "jsdom-global": "3.0.2",
     "mocha": "^11.5.0",

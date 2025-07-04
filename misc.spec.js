@@ -24,14 +24,20 @@ describe('Misc', function () {
     })
   })
 
-  it('evaluateAttributeExpressions (skip ref attributes)', () => {
+  it('evaluateAttributeExpressions do not skip ref attributes ', () => {
     expect(
-      generatePropsFromAttributes([
+      generatePropsFromAttributes(
+        [
+          {
+            type: REF,
+            evaluate: (scope) => scope.ref,
+          },
+        ],
         {
-          type: REF,
+          ref: 'ref',
         },
-      ]),
-    ).to.be.deep.equal({})
+      ),
+    ).to.be.deep.equal({ ref: 'ref' })
   })
 
   it('memoize', () => {

@@ -34,30 +34,29 @@ export function memoize(fn) {
  * @returns {Object} key value pairs with the result of the computation
  */
 export function generatePropsFromAttributes(attributes, scope) {
-  return (
-    attributes
-      // filter out the ref attributes
-      .filter(({ type }) => type !== REF)
-      .reduce((acc, { type, name, evaluate }) => {
-        const value = evaluate(scope)
+  return attributes.reduce((acc, { type, name, evaluate }) => {
+    const value = evaluate(scope)
 
-        switch (true) {
-          // spread attribute
-          case !name && type === ATTRIBUTE:
-            return {
-              ...acc,
-              ...value,
-            }
-          // value attribute
-          case type === VALUE:
-            acc.value = value
-            break
-          // normal attributes
-          default:
-            acc[dashToCamelCase(name)] = value
+    switch (true) {
+      // spread attribute
+      case !name && type === ATTRIBUTE:
+        return {
+          ...acc,
+          ...value,
         }
+      // ref attribute
+      case type === REF:
+        acc.ref = value
+        break
+      // value attribute
+      case type === VALUE:
+        acc.value = value
+        break
+      // normal attributes
+      default:
+        acc[dashToCamelCase(name)] = value
+    }
 
-        return acc
-      }, {})
-  )
+    return acc
+  }, {})
 }

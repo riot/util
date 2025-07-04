@@ -1,3 +1,5 @@
+import { EVENT_ATTRIBUTE_RE } from './constants.js'
+
 /**
  * Quick type checking
  * @param   {*} element - anything
@@ -70,4 +72,13 @@ export function isNil(value) {
  */
 export function isNode() {
   return typeof globalThis.process !== 'undefined'
+}
+
+/**
+ * Check if an attribute is a DOM handler
+ * @param   {string} attribute - attribute string
+ * @returns {boolean} true only for dom listener attribute nodes
+ */
+export function isEventAttribute(attribute) {
+  return EVENT_ATTRIBUTE_RE.test(attribute)
 }

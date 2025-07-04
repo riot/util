@@ -1,5 +1,6 @@
 import {
   isBoolean,
+  isEventAttribute,
   isFunction,
   isNil,
   isNode,
@@ -63,5 +64,10 @@ describe('Checks', function () {
   it('isTemplate', () => {
     expect(isTemplate(document.createElement('template'))).to.be.ok
     expect(isTemplate(document.createElement('div'))).to.be.not.ok
+  })
+
+  it('isEventAttribute', () => {
+    expect(isEventAttribute('onclick')).to.be.ok
+    expect(isEventAttribute('name')).to.be.not.ok
   })
 })

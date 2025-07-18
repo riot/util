@@ -3,7 +3,7 @@ import { dashToCamelCase } from './strings.js'
 /**
  * Get all the element attributes as object
  * @param   {HTMLElement} element - DOM node we want to parse
- * @returns {Object} all the attributes found as a key value pairs
+ * @returns {object} all the attributes found as a key value pairs
  */
 export function DOMattributesToObject(element) {
   return Array.from(element.attributes).reduce((acc, attribute) => {

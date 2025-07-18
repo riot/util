@@ -7,9 +7,9 @@ export function noop() {
 
 /**
  * Autobind the methods of a source object to itself
- * @param   {Object} source - probably a riot tag instance
+ * @param   {object} source - probably a riot tag instance
  * @param   {Array<string>} methods - list of the methods to autobind
- * @returns {Object} the original object received
+ * @returns {object} the original object received
  */
 export function autobindMethods(source, methods) {
   methods.forEach((method) => {

@@ -2,14 +2,13 @@ import { isObject } from './checks.js'
 
 /**
  * Helper function to set an immutable property
- * @param   {Object} source - object where the new property will be set
+ * @param   {object} source - object where the new property will be set
  * @param   {string} key - object key where the new property will be stored
  * @param   {*} value - value of the new property
- * @param   {Object} options - set the property overriding the default options
- * @returns {Object} - the original object modified
+ * @param   {object} options - set the property overriding the default options
+ * @returns {object} - the original object modified
  */
 export function defineProperty(source, key, value, options = {}) {
-  /* eslint-disable fp/no-mutating-methods */
   Object.defineProperty(source, key, {
     value,
     enumerable: false,
@@ -17,17 +16,16 @@ export function defineProperty(source, key, value, options = {}) {
     configurable: true,
     ...options,
   })
-  /* eslint-enable fp/no-mutating-methods */
 
   return source
 }
 
 /**
  * Define multiple properties on a target object
- * @param   {Object} source - object where the new properties will be set
- * @param   {Object} properties - object containing as key pair the key + value properties
- * @param   {Object} options - set the property overriding the default options
- * @returns {Object} the original object modified
+ * @param   {object} source - object where the new properties will be set
+ * @param   {object} properties - object containing as key pair the key + value properties
+ * @param   {object} options - set the property overriding the default options
+ * @returns {object} the original object modified
  */
 export function defineProperties(source, properties, options) {
   Object.entries(properties).forEach(([key, value]) => {
@@ -39,9 +37,9 @@ export function defineProperties(source, properties, options) {
 
 /**
  * Define default properties if they don't exist on the source object
- * @param   {Object} source - object that will receive the default properties
- * @param   {Object} defaults - object containing additional optional keys
- * @returns {Object} the original object received enhanced
+ * @param   {object} source - object that will receive the default properties
+ * @param   {object} defaults - object containing additional optional keys
+ * @returns {object} the original object received enhanced
  */
 export function defineDefaults(source, defaults) {
   Object.entries(defaults).forEach(([key, value]) => {
@@ -62,9 +60,9 @@ export function cloneDeep(source) {
 
 /**
  * Like Array.prototype.filter but for objects
- * @param {Object} source - target object
- * @param {Funciton} filter - filter function
- * @return {Object} filtered source or the original source received
+ * @param {object} source - target object
+ * @param {(key: unknown, value: unknown) => boolean} filter - filter function
+ * @returns {object} filtered source or the original source received
  */
 export function filter(source, filter) {
   return isObject(source)
@@ -76,9 +74,9 @@ export function filter(source, filter) {
 
 /**
  * Generate a new object picking only the properties from a given array
- * @param {Object} source - target object
+ * @param {object} source - target object
  * @param {Array} keys - list of keys that we want to copy over to the new object
- * @return {Object} a new object conaining only the keys that we have picked from the keys array list
+ * @returns {object} a new object conaining only the keys that we have picked from the keys array list
  */
 export function pick(source, keys) {
   return isObject(source)

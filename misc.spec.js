@@ -24,7 +24,7 @@ describe('Misc', function () {
     })
   })
 
-  it('generatePropsFromAttributes do not skip ref attributes ', () => {
+  it('generatePropsFromAttributes do not skip ref attributes', () => {
     expect(
       generatePropsFromAttributes(
         [

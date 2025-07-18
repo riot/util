@@ -3,7 +3,7 @@
 Riot.js shared util scripts
 
 [![Build Status][ci-image]][ci-url]
-[![Issue Count][codeclimate-image]][codeclimate-url]
+[![Issue Count][qlty-image]][qlty-url]
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
@@ -15,5 +15,5 @@ Riot.js shared util scripts
 [npm-version-image]: https://img.shields.io/npm/v/@riotjs/util.svg?style=flat-square
 [npm-downloads-image]: https://img.shields.io/npm/dm/@riotjs/util.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@riotjs/util
-[codeclimate-image]: https://api.codeclimate.com/v1/badges/352cc9afc317e20f7f0a/maintainability
-[codeclimate-url]: https://codeclimate.com/github/riot/util
+[qlty-image]: https://qlty.sh/gh/riot/projects/util/maintainability.svg
+[qlty-url]: https://qlty.sh/gh/riot/projects/util

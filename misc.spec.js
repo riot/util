@@ -7,7 +7,7 @@ describe('Misc', function () {
     expect(() => panic('err')).to.throw()
   })
 
-  it('evaluateAttributeExpressions', () => {
+  it('generatePropsFromAttributes', () => {
     expect(
       generatePropsFromAttributes(
         [
@@ -24,7 +24,7 @@ describe('Misc', function () {
     })
   })
 
-  it('evaluateAttributeExpressions do not skip ref attributes ', () => {
+  it('generatePropsFromAttributes do not skip ref attributes ', () => {
     expect(
       generatePropsFromAttributes(
         [

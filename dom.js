@@ -1,9 +1,10 @@
 import { dashToCamelCase } from './strings.js'
 
 // Rely on the new moveBefore method to move nodes if it's available https://developer.mozilla.org/en-US/docs/Web/API/Element/moveBefore
-const MOVE_BEFORE_METHOD = Element?.prototype?.moveBefore
-  ? 'moveBefore'
-  : 'insertBefore'
+const MOVE_BEFORE_METHOD =
+  typeof Element !== 'undefined' && Element.prototype.moveBefore
+    ? 'moveBefore'
+    : 'insertBefore'
 
 /**
  * Get all the element attributes as object

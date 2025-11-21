@@ -3,6 +3,7 @@ import {
   cleanNode,
   clearChildren,
   insertBefore,
+  moveBefore,
   moveChildren,
   removeChild,
   replaceChild,
@@ -63,6 +64,17 @@ describe('DOM', function () {
     const p = source.querySelector('p')
 
     insertBefore(div, p)
+
+    expect(source.innerHTML).to.be.equal('<div></div><p>hello</p>')
+  })
+
+  it('moveBefore', () => {
+    const source = document.createElement('div')
+    source.innerHTML = '<p>hello</p>'
+    const div = document.createElement('div')
+    const p = source.querySelector('p')
+
+    moveBefore(div, p)
 
     expect(source.innerHTML).to.be.equal('<div></div><p>hello</p>')
   })

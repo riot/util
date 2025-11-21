@@ -1,11 +1,5 @@
 import { dashToCamelCase } from './strings.js'
 
-// Rely on the new moveBefore method to move nodes if it's available https://developer.mozilla.org/en-US/docs/Web/API/Element/moveBefore
-const MOVE_BEFORE_METHOD =
-  typeof Element !== 'undefined' && Element.prototype.moveBefore
-    ? 'moveBefore'
-    : 'insertBefore'
-
 /**
  * Get all the element attributes as object
  * @param   {HTMLElement} element - DOM node we want to parse
@@ -65,7 +59,22 @@ export const removeChild = (node) => node.remove()
  * @returns {undefined}
  */
 export const insertBefore = (newNode, refNode) =>
-  refNode?.parentNode?.[MOVE_BEFORE_METHOD](newNode, refNode)
+  refNode?.parentNode?.insertBefore(newNode, refNode)
+
+/**
+ * Move a node into its new position. Use the moveBefore method if it's available
+ * @param {HTMLElement} existingNode - node to move
+ * @param {HTMLElement} refNode - ref child
+ * @returns {undefined}
+ */
+export const moveBefore = ((hasMoveBefore) => (existingNode, refNode) =>
+  hasMoveBefore
+    ? refNode?.parentNode?.moveBefore(existingNode, refNode)
+    : insertBefore(existingNode, refNode))(
+  // Rely on the new moveBefore method to move nodes if it's available https://developer.mozilla.org/en-US/docs/Web/API/Element/moveBefore
+  // cache the value of the check into a boolean variable
+  typeof Element !== 'undefined' && Element.prototype.moveBefore,
+)
 
 /**
  * Replace a node

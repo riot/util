@@ -92,13 +92,13 @@
   "homepage": "https://github.com/GianlucaGuarini/@riotjs/util#readme",
   "devDependencies": {
     "@riotjs/prettier-config": "^1.1.0",
-    "chai": "^5.2.1",
-    "eslint": "^9.31.0",
+    "chai": "^6.2.1",
+    "eslint": "^9.39.1",
     "eslint-config-riot": "^5.0.2",
-    "jsdom": "26.1.0",
+    "jsdom": "27.2.0",
     "jsdom-global": "3.0.2",
-    "mocha": "^11.7.1",
+    "mocha": "^11.7.5",
     "prettier": "^3.6.2",
-    "rollup": "^4.45.1"
+    "rollup": "^4.53.3"
   }
 }

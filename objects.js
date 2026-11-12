@@ -4,7 +4,7 @@ import { isObject } from './checks.js'
  * Helper function to set an immutable property
  * @param   {object} source - object where the new property will be set
  * @param   {string} key - object key where the new property will be stored
- * @param   {*} value - value of the new property
+ * @param   {unknown} value - value of the new property
  * @param   {object} options - set the property overriding the default options
  * @returns {object} - the original object modified
  */
@@ -51,8 +51,8 @@ export function defineDefaults(source, defaults) {
 
 /**
  * Simple clone deep function, do not use it for classes or recursive objects!
- * @param   {*} source - possibly an object to clone
- * @returns {*} the object we wanted to clone
+ * @param   {unknown} source - possibly an object to clone
+ * @returns {unknown} the object we wanted to clone
  */
 export function cloneDeep(source) {
   return structuredClone(source)

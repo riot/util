@@ -13,8 +13,8 @@ export function panic(message, cause) {
 /**
  * Returns the memoized (cached) function.
  * // borrowed from https://www.30secondsofcode.org/js/s/memoize
- * @param {Function} fn - function to memoize
- * @returns {Function} memoize function
+ * @param {(val: unknown) => unknown} fn - function to memoize
+ * @returns {(val: unknown) => unknown} memoize function
  */
 export function memoize(fn) {
   const cache = new Map()

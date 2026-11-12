@@ -21,8 +21,8 @@ export function autobindMethods(source, methods) {
 
 /**
  * Call the first argument received only if it's a function otherwise return it as it is
- * @param   {*} source - anything
- * @returns {*} anything
+ * @param   {unknown} source - anything
+ * @returns {unknown} anything
  */
 export function callOrAssign(source) {
   return isFunction(source)

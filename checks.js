@@ -2,7 +2,7 @@ import { EVENT_ATTRIBUTE_RE } from './constants.js'
 
 /**
  * Quick type checking
- * @param   {*} element - anything
+ * @param   {unknown} element - anything
  * @param   {string} type - type definition
  * @returns {boolean} true if the type corresponds
  */
@@ -32,7 +32,7 @@ export function isTemplate(el) {
 
 /**
  * Check that will be passed if its argument is a function
- * @param   {*} value - value to check
+ * @param   {unknown} value - value to check
  * @returns {boolean} - true if the value is a function
  */
 export function isFunction(value) {
@@ -41,7 +41,7 @@ export function isFunction(value) {
 
 /**
  * Check if a value is a Boolean
- * @param   {*}  value - anything
+ * @param   {unknown}  value - anything
  * @returns {boolean} true only for the value is a boolean
  */
 export function isBoolean(value) {
@@ -50,7 +50,7 @@ export function isBoolean(value) {
 
 /**
  * Check if a value is an Object
- * @param   {*}  value - anything
+ * @param   {unknown}  value - anything
  * @returns {boolean} true only for the value is an object
  */
 export function isObject(value) {
@@ -59,7 +59,7 @@ export function isObject(value) {
 
 /**
  * Check if a value is null or undefined
- * @param   {*}  value - anything
+ * @param   {unknown}  value - anything
  * @returns {boolean} true only for the 'undefined' and 'null' types
  */
 export function isNil(value) {
